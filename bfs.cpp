@@ -16,20 +16,20 @@ class graph{
 			map<T,int>vis;
 			
 			q.push(src);
-			vis[src]=true;
+			vis[src] = true;
 			
 			while(!q.empty())
 			{
 				T temp=q.front();
 				q.pop();
-				cout<<temp<<" ";
+				cout<< temp <<" ";
 				
-				for(int nbr:l[temp])
+				for(int nbr : l[temp])
 				{
 					if(!vis[nbr])
 					{
 						q.push(nbr);
-						vis[nbr]=true;
+						vis[nbr] = true;
 					}
 				}
 			}
@@ -39,9 +39,16 @@ class graph{
 int main()
 {
 	graph<int> g;
-	g.addedge(0,1);
-	g.addedge(1,2);
-	g.addedge(0,2);
+	g.addedge(2,1);
 	g.addedge(2,3);
-	g.addedge(3,1);
+	g.addedge(3,2);
+	g.addedge(3,0);
+	g.addedge(1,2);
+	g.addedge(1,0);
+	g.addedge(0,1);
+	g.addedge(3,4);
+	g.addedge(4,3);
+	g.addedge(4,5);
+	g.addedge(5,4);
+	g.bfs(0);
 }
