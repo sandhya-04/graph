@@ -1,8 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 template<typename T>
-map<T,list<T> >l;
+
 class graph{
+	map<T,list<T> >l;
 	public:
 		void addedge(int x,int y)
 		{
@@ -23,7 +24,7 @@ class graph{
 				q.pop();
 				cout<<temp<<" ";
 				
-				for(int nbr: l[temp)
+				for(int nbr:l[temp])
 				{
 					if(!vis[nbr])
 					{
